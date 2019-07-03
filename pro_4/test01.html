@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <frist>
+        <second slot="second" v-bind:test_title='test_title'></second>
+        <third slot="third" v-bind:test_data='test_data' v-for='test_data in test_datas'></third>
+    </frist>
+</div>
+</body>
+<script>
+    Vue.component("first",{
+        template: "<div>\
+            <slot name='second'></slot>\
+            <ul>\
+            <slot name='third'></slot>\
+            </ul>\
+            </div>"
+    });
+    Vue.component("second",{
+        props:["test_title"],
+        template: "<h1>{{test_title}}<h1></h1></h1>"
+    });
+    Vue.component("third",{
+        props:["test_data"],
+        template:"<li>{{test_data}}</li>"
+    });
+    var vue1 = new Vue({
+        el:"#app",
+        data:{
+            test_title:"nlb",
+            test_datas:["1","2","3","4"]
+        }
+    });
+
+</script>
+</html>
