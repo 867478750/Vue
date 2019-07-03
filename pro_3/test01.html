@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <div> <input type="text" value="1" v-model="input_data" /><br>
+    {{input_data}}</div>
+    <div>
+        <select v-model="select_data">
+            <option disabled value="">请选择</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+        {{select_data}}
+
+    </div>
+</div>
+</body>
+<script>
+    var vue1 = new Vue({
+        el:"#app",
+        data:{
+            input_data:null,
+            select_data:null
+        }
+    });
+
+
+</script>
+</html>

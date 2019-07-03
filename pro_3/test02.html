@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="aa">
+    <ul>
+        <div><my-component v-for="p in pp" v-bind:p="p"></my-component></div>
+    </ul>
+
+</div>
+</body>
+<script>
+    Vue.component("my-component",{
+        props:['p'],
+        template:"<li>{{p}}</li>"
+    });
+    var vue1 = new Vue({
+        el:aa,
+        data:{
+            pp:["1","2","3","4"]
+        }
+    });
+
+
+</script>
+</html>
